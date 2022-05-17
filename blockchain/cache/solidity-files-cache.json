@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\shaan\\Programs\\SEAN\\DAO-Starter\\blockchain\\contracts\\Database.sol": {
+      "lastModificationDate": 1652771612460,
+      "contentHash": "ab0b9153c07738acfcfd899ff29eae45",
+      "sourceName": "blockchain/contracts/Database.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "Database"
+      ]
+    }
+  }
+}

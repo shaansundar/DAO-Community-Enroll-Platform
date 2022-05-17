@@ -1,0 +1,19 @@
+<h1 *ngIf="this.isLoading" class="mt-16 text-center text-2xl text-white">
+    Loading...
+</h1>
+
+<div *ngIf="!this.isLoading" class="mt-16 text-white w-full px-4">
+    <a routerLink="/" class="underline">Back</a>
+    <table class="w-full max-w-7xl">
+        <tr>
+            <td class="p-2 w-1/3 border-white border">Name</td>
+            <td class="p-2 w-1/3 border-white border">Registration Number</td>
+            <td class="p-2 w-1/3 border-white border">Wallet Address</td>
+        </tr>
+        <tr *ngFor="let item of data">
+            <td class="p-2 w-1/3 border-white border">{{item[2]}}</td>
+            <td class="p-2 w-1/3 border-white border">{{item[3]}}</td>
+            <td class="p-2 w-1/3 border-white border">{{item[1]}}</td>
+        </tr>
+    </table>
+</div>
