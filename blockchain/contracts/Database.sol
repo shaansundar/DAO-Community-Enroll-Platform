@@ -4,6 +4,7 @@ pragma solidity ^0.8.4;
 contract Database {
     struct MemberProfile {
         uint256 index;
+        uint256 timeEnrolled;
         address walletAddress;
         string name;
         string uid;
@@ -23,7 +24,7 @@ contract Database {
     }
 
     constructor() {
-        counter = 1;
+        counter = 0;
         isAdmin[msg.sender]=true;
     }
 
@@ -38,6 +39,7 @@ contract Database {
         allMembers.push(
             MemberProfile(
                 counter,
+                block.timestamp,
                 msg.sender,
                 _name,
                 _uid,
@@ -61,6 +63,7 @@ contract Database {
         allMembers.push(
             MemberProfile(
                 counter,
+                block.timestamp,
                 _address,
                 _name,
                 _uid,
@@ -74,5 +77,20 @@ contract Database {
 
     function getAllMembers() public view returns(MemberProfile[] memory){
         return allMembers;
+    }
+
+    function deleteMember(uint256 _id) public{
+        require(isAdmin[msg.sender], "Only admins can invoke");
+        remove(_id);
+    }
+
+    function remove(uint _index) internal {
+        require(_index < allMembers.length, "index out of bound");
+        require(isAdmin[msg.sender], "Only admins can invoke");
+
+        for (uint i = _index; i < allMembers.length - 1; i++) {
+            allMembers[i] = allMembers[i + 1];
+        }
+        allMembers.pop();
     }
 }
