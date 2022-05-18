@@ -2,7 +2,7 @@
     Loading...
 </h1>
 
-<div *ngIf="!this.isLoading" class="mt-16 text-white w-full px-4">
+<div *ngIf="!this.isLoading" class="mt-16 overflow-x-auto text-white w-full px-4">
     <a routerLink="/" class="underline">Back</a>
     <table class="w-full max-w-7xl">
         <tr>
@@ -14,8 +14,8 @@
         </tr>
         <tr *ngFor="let item of data">
             <td class="p-2 w-1/10 border-white border">{{item[0]}}</td>
-            <td class="p-2 w-3/10 border-white border">{{item[2]}}</td>
-            <td class="p-2 w-1/5 border-white border">{{item[3]}}</td>
+            <td class="p-2 w-1/10 border-white border">{{item[2].slice(0,5)+'.....'+item[2].slice(-6,-1)}}</td>
+            <td class="p-2 w-2/5 border-white border">{{item[3]}}</td>
             <td class="p-2 w-1/5 border-white border">{{item[4]}}</td>
             <td class="p-2 w-1/5 border-white border">{{ timeConverter(item[1])}}</td>
         </tr>
