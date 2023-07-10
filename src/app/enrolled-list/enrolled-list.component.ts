@@ -9,7 +9,7 @@ const fs = require('fs')
   styles: [],
 })
 export class EnrolledListComponent implements OnInit {
-  public provider: any = new ethers.providers.JsonRpcProvider('https://rpc.testnet.fantom.network');
+  public provider: any = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/fantom_testnet');
   public DAOInterface: any;
   public data: any;
   public emails: any;
